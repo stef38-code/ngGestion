@@ -1,0 +1,48 @@
+html, body, .layout {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Conteneur principal du layout */
+.layout {
+  display: flex;
+  flex-direction: column; /* Menubar en haut, sidebar + contenu en dessous */
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  overflow: hidden; /* Évite les débordements */
+  margin: 0;
+  padding: 0;
+}
+
+.custom-menubar {
+  height: 50px; /* Hauteur fixe pour le menubar */
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Corps principal (sidebar à gauche + contenu à droite) */
+.layout-body {
+  display: flex;
+  flex: 1; /* Prend tout l'espace restant après le menubar */
+}
+
+/* Sidebar à gauche */
+.custom-sidebar {
+  width: 250px; /* Largeur fixe pour le sidebar */
+  height: calc(100vh - 50px); /* Hauteur : écran total - hauteur du menu */
+  position: relative; /* Supprime tout comportement de chevauchement (fixed/absolute) */
+  background-color: #ffffff;
+  border-right: 1px solid #ccc; /* Ajout d'une bordure séparatrice */
+  overflow-y: auto; /* Permet un scroll si nécessaire */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 900; /* En dessous du menubar */
+}
+
+/* Zone de contenu principale */
+.layout-content {
+  flex: 1; /* Prend tout l'espace disponible restant après la sidebar */
+  padding: 20px;
+  background-color: #f9f9f9; /* Fond grisé */
+  overflow-y: auto; /* Permet un défilement vertical si le contenu dépasse */
+}

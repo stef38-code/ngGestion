@@ -1,1 +1,7 @@
 @import 'primeicons/primeicons.css';
+
+
+.layout-body {
+  display: flex;
+  flex: 1; /* Prend tout l'espace restant après le menubar */
+}
